@@ -1,0 +1,17 @@
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+tab_width = 4
+trim_trailing_whitespace = true
+
+[**/snippet/**/*.json]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{Taskfile.yml,Taskfile.dist.yml}]
+indent_size = 2

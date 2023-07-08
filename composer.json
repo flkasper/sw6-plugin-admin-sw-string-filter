@@ -1,0 +1,30 @@
+{
+    "name": "flkasper/sw6-plugin-admin-sw-string-filter",
+    "description": "Admin sw-string-filter",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florian Kasper",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "shopware/core": "~6.4.4"
+    },
+    "extra": {
+        "shopware-plugin-class": "Flkasper\\Plugin\\AdminSwStringFilter\\FlkasperAdminSwStringFilter",
+        "copyright": "bits & likes GmbH",
+        "label": {
+            "en-GB": "Admin sw-string-filter",
+            "de-DE": "Admin sw-string-filter"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Flkasper\\Plugin\\AdminSwStringFilter\\": "src/"
+        }
+    }
+}

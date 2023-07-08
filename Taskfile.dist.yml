@@ -1,0 +1,20 @@
+version: '3'
+
+vars:
+  EXTENSION_VERSION: 1.0.0
+  EXTENSION_NAME: 'FlkasperAdminSwStringFilter'
+  ZIP_TARGET_FILE_NAME: "{{.EXTENSION_NAME}}-v{{.EXTENSION_VERSION}}.zip"
+
+tasks:
+  zip:
+    desc: Clear cache
+    silent: true
+    cmds:
+      - echo "Init dist folder"
+      - mkdir -p "$PWD/dist"
+      - touch "$PWD/dist/.gitkeep"
+      - cd "$PWD"
+      - echo "shopware-cli extension zip $PWD "v{{.EXTENSION_VERSION}}" --release --disable-git --output-directory dist"
+      - shopware-cli extension zip "$PWD" "v{{.EXTENSION_VERSION}}" --release --disable-git --output-directory dist
+      - 'echo "Moved zip to: dist/{{.ZIP_TARGET_FILE_NAME}}"'
+

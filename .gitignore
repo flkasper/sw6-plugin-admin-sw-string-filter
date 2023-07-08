@@ -1,0 +1,6 @@
+# IntelliJ project files
+.idea
+*.iml
+/Taskfile.yml
+/dist/
+!/dist/.gitkeep

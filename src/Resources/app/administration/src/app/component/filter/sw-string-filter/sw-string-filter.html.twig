@@ -1,0 +1,18 @@
+{% block sw_string_filter %}
+    <sw-base-filter
+        :title="filter.label"
+        :active="active"
+        :show-reset-button="!!filter.value"
+        class="sw-string-filter"
+        @filter-reset="resetFilter"
+    >
+        {% block sw_string_filter_content %}
+            <sw-text-field
+                class="sw-string-filter__input"
+                v-model="filter.value"
+                :placeholder="filter.placeholder"
+                @change="updateFilter"
+            ></sw-text-field>
+        {% endblock sw_string_filter_content %}
+    </sw-base-filter>
+{% endblock sw_string_filter %}
