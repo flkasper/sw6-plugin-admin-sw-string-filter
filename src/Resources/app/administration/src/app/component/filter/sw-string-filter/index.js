@@ -15,25 +15,32 @@ export default {
             type: Boolean,
             required: true,
         },
-        comparator: {
-            type: String,
-            required: false,
-            default: 'contains',
-            validValues: ['equals', 'contains'],
-            validator(value) {
-                return ['equals', 'contains'].includes(value);
-            },
-        },
-        enableManualMode: {
-            type: Boolean,
-            default: false,
-        },
+        // comparator: {
+        //     type: String,
+        //     required: false,
+        //     default: 'contains',
+        //     validValues: ['equals', 'contains'],
+        //     validator(value) {
+        //         return ['equals', 'contains'].includes(value);
+        //     },
+        // }
+        // enableManualMode: {
+        //     type: Boolean,
+        //     default: false,
+        // },
     },
 
     data() {
+        const comparator = this.filter.comparator ?? 'contains';
+        if (!['equals', 'contains'].includes(comparator)) {
+            throw new TypeError("prop comparator must be one of: equals | contains", comparator);
+        }
+        const enableManualMode = !!(this.filter.enableManualMode ?? false);
         return {
             stringValue: null,
-            currentComparator: this.comparator,
+            comparator: comparator,
+            currentComparator: comparator,
+            enableManualMode: enableManualMode,
         };
     },
 
