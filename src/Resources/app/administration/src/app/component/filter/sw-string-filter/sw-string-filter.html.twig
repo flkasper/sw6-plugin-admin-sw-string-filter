@@ -11,8 +11,19 @@
                 class="sw-string-filter__input"
                 v-model="filter.value"
                 :placeholder="filter.placeholder"
+                :hasSuffix="enableManuellMode"
                 @change="updateFilter"
-            ></sw-text-field>
+            >
+                <template
+                    v-if="enableManuellMode"
+                    #suffix="{ identification }"
+                >
+                    <sw-select-field v-model="currentComparator" @change="updateFilter(stringValue, true)">
+                        <option value="contains">[...]</option>
+                        <option value="equals"> = </option>
+                    </sw-select-field>
+                </template>
+            </sw-text-field>
         {% endblock sw_string_filter_content %}
     </sw-base-filter>
 {% endblock sw_string_filter %}
