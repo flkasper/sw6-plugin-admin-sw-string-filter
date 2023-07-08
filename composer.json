@@ -16,10 +16,17 @@
     },
     "extra": {
         "shopware-plugin-class": "Flkasper\\Plugin\\AdminSwStringFilter\\FlkasperAdminSwStringFilter",
-        "copyright": "bits & likes GmbH",
         "label": {
             "en-GB": "Admin sw-string-filter",
             "de-DE": "Admin sw-string-filter"
+        },
+        "manufacturerLink": {
+            "en-GB": "https://github.com/flkasper",
+            "de-DE": "https://github.com/flkasper"
+        },
+        "supportLink": {
+            "en-GB": "https://github.com/flkasper/issues",
+            "de-DE": "https://github.com/flkasper/issues"
         }
     },
     "autoload": {

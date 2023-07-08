@@ -1,6 +1,6 @@
 # Shopware 6 Plugin: Admin sw-string-filter
 
-[//]: # (Shopware-Version: 6.X.Y)
+Shopware-Version: >= 6.4.4
 
 Plugin that adds the missing sw-string-filter in admin.
 
