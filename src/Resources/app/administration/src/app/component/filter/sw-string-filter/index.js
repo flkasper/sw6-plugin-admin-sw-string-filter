@@ -1,10 +1,9 @@
 import template from './sw-string-filter.html.twig';
 // import './sw-string-filter.scss';
 
-const {Component} = Shopware;
 const {Criteria} = Shopware.Data;
 
-Component.register('sw-string-filter', {
+export default {
     template,
 
     props: {
@@ -48,7 +47,6 @@ Component.register('sw-string-filter', {
         },
     },
 
-
     methods: {
         updateFilter(newValue) {
             if (!newValue) {
@@ -74,5 +72,4 @@ Component.register('sw-string-filter', {
             this.$emit('filter-reset', this.filter.name, this.stringValue);
         },
     },
-
-});
+};
