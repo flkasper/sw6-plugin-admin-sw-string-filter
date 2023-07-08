@@ -11,11 +11,11 @@
                 class="sw-string-filter__input"
                 v-model="filter.value"
                 :placeholder="filter.placeholder"
-                :hasSuffix="enableManuellMode"
+                :hasSuffix="enableManualMode"
                 @change="updateFilter"
             >
                 <template
-                    v-if="enableManuellMode"
+                    v-if="enableManualMode"
                     #suffix="{ identification }"
                 >
                     <sw-select-field v-model="currentComparator" @change="updateFilter(stringValue, true)">
