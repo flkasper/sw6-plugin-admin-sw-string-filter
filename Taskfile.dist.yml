@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  EXTENSION_VERSION: 1.0.0
+  EXTENSION_VERSION: 6.4.20
   EXTENSION_NAME: 'FlkasperAdminSwStringFilter'
   ZIP_TARGET_FILE_NAME: "{{.EXTENSION_NAME}}-v{{.EXTENSION_VERSION}}.zip"
 
