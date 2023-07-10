@@ -49,8 +49,7 @@ export default {
             currentComparatorOptions: currentComparatorOptions,
             enableManualMode: !!(this.filter.enableManualMode ?? false),
         };
-    }
-    ,
+    },
 
     watch: {
         'filter.value': {
