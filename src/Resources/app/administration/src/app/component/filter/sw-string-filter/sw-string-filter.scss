@@ -1,18 +1,16 @@
 .sw-string-filter {
-    .sw-contextual-field .sw-field__addition {
-        padding: 0;
+    .sw-contextual-field{
+        .sw-field__addition {
+            padding: 0;
 
-        > .sw-block-field {
-            margin-bottom: 0;
-            background: #f9fafb;
-
-            .sw-block-field__block {
+            > .sw-block-field {
+                margin-bottom: 0;
                 background: #f9fafb;
-                border: none;
-                border-radius: 0;
 
-                select {
-                    padding-right: 35px;
+                .sw-block-field__block {
+                    background: #f9fafb;
+                    border: none;
+                    border-radius: 0;
                 }
             }
         }

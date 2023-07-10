@@ -2,6 +2,13 @@ import template from './sw-string-filter.html.twig';
 import './sw-string-filter.scss';
 
 const {Criteria} = Shopware.Data;
+const currentComparatorOptions = [
+    "contains",
+    "equals",
+    "equalsAny",
+    "prefix",
+    "suffix",
+];
 
 export default {
     template,
@@ -19,9 +26,9 @@ export default {
         //     type: String,
         //     required: false,
         //     default: 'contains',
-        //     validValues: ['equals', 'contains'],
+        //     validValues: currentComparatorOptions,
         //     validator(value) {
-        //         return ['equals', 'contains'].includes(value);
+        //         return currentComparatorOptions.includes(value);
         //     },
         // }
         // enableManualMode: {
@@ -31,18 +38,19 @@ export default {
     },
 
     data() {
-        const comparator = this.filter.comparator ?? 'contains';
-        if (!['equals', 'contains'].includes(comparator)) {
+        let comparator = this.filter.comparator ?? 'contains';
+        if (!currentComparatorOptions.includes(comparator)) {
             throw new TypeError("prop comparator must be one of: equals | contains", comparator);
         }
-        const enableManualMode = !!(this.filter.enableManualMode ?? false);
         return {
             stringValue: null,
             comparator: comparator,
             currentComparator: comparator,
-            enableManualMode: enableManualMode,
+            currentComparatorOptions: currentComparatorOptions,
+            enableManualMode: !!(this.filter.enableManualMode ?? false),
         };
-    },
+    }
+    ,
 
     watch: {
         'filter.value': {
@@ -72,6 +80,15 @@ export default {
             switch (this.enableManualMode ? this.currentComparator : this.comparator) {
                 case 'equals':
                     filterCriteria = [Criteria.equals(this.filter.property, newValue)];
+                    break;
+                case 'equalsAny':
+                    filterCriteria = [Criteria.equalsAny(this.filter.property, newValue.split(' ').map(e => e.trim()))];
+                    break;
+                case 'prefix':
+                    filterCriteria = [Criteria.prefix(this.filter.property, newValue)];
+                    break;
+                case 'suffix':
+                    filterCriteria = [Criteria.suffix(this.filter.property, newValue)];
                     break;
                 case 'contains':
                 default:

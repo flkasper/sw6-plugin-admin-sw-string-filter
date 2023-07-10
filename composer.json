@@ -1,7 +1,7 @@
 {
     "name": "flkasper/sw6-plugin-admin-sw-string-filter",
     "description": "Admin sw-string-filter",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
