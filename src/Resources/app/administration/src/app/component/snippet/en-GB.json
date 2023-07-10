@@ -1,0 +1,26 @@
+{
+  "FlkasperAdminSwStringFilter": {
+    "currentComparatorOptions": {
+      "contains": {
+        "label": "contains",
+        "title": "Vague search (contains)"
+      },
+      "equals": {
+        "label": "equals",
+        "title": "Exact search (equals)"
+      },
+      "equalsAny": {
+        "label": "equalsAny",
+        "title": "Exact search for all tokens (equalsAny, space separated)"
+      },
+      "prefix": {
+        "label": "prefix",
+        "title": "Search by prefix"
+      },
+      "suffix": {
+        "label": "suffix",
+        "title": "Search by suffix"
+      }
+    }
+  }
+}

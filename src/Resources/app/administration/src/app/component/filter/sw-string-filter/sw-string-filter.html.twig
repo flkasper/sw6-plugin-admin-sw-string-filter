@@ -12,15 +12,23 @@
                 v-model="filter.value"
                 :placeholder="filter.placeholder"
                 :hasSuffix="enableManualMode"
+                :title="$tc('FlkasperAdminSwStringFilter.currentComparatorOptions.' + currentComparator + '.title')"
                 @change="updateFilter"
             >
                 <template
                     v-if="enableManualMode"
                     #suffix="{ identification }"
                 >
-                    <sw-select-field v-model="currentComparator" @change="updateFilter(stringValue, true)">
-                        <option value="contains">[...]</option>
-                        <option value="equals"> = </option>
+                    <sw-select-field
+                        v-model="currentComparator"
+                        @change="updateFilter(stringValue, true)"
+                    >
+                        <option
+                            :value="method" v-for="method in currentComparatorOptions"
+                            :title="$tc('FlkasperAdminSwStringFilter.currentComparatorOptions.' + method + '.title')"
+                        >
+                            {{ $tc('FlkasperAdminSwStringFilter.currentComparatorOptions.'+method+'.label') }}
+                        </option>
                     </sw-select-field>
                 </template>
             </sw-text-field>

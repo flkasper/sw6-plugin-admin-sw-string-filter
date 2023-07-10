@@ -1,0 +1,26 @@
+{
+  "FlkasperAdminSwStringFilter": {
+    "currentComparatorOptions": {
+      "contains": {
+        "label": "contains",
+        "title": "Ungenaue Suche (contains)"
+      },
+      "equals": {
+        "label": "equals",
+        "title": "Genaue Suche (equals)"
+      },
+      "equalsAny": {
+        "label": "equalsAny",
+        "title": "Genaue Suche für alle Token (equalsAny, Leerzeichen getrennt)"
+      },
+      "prefix": {
+        "label": "prefix",
+        "title": "Suche anhand von Prefix"
+      },
+      "suffix": {
+        "label": "suffix",
+        "title": "Search by suffix"
+      }
+    }
+  }
+}
